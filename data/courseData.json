@@ -1,0 +1,961 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-01-06",
+  "modules": [
+    {
+      "id": "m1",
+      "title": "Introduzione a n8n (Zero → Fondamenta)",
+      "lessonIds": [
+        "m1-01",
+        "m1-02",
+        "m1-03",
+        "m1-04",
+        "m1-05",
+        "m1-06",
+        "m1-07",
+        "m1-08",
+        "m1-09",
+        "m1-10",
+        "m1-11",
+        "m1-12",
+        "m1-13",
+        "m1-14",
+        "m1-15",
+        "m1-16",
+        "m1-17",
+        "m1-18",
+        "m1-19",
+        "m1-20",
+        "m1-21",
+        "m1-22",
+        "m1-23"
+      ]
+    },
+    {
+      "id": "m2",
+      "title": "Utilizzare servizi ed API (Integrare qualsiasi cosa)",
+      "lessonIds": [
+        "m2-01",
+        "m2-02",
+        "m2-03",
+        "m2-04",
+        "m2-05",
+        "m2-06",
+        "m2-07"
+      ]
+    },
+    {
+      "id": "m3",
+      "title": "Sub-workflows (Scalare e riusare)",
+      "lessonIds": [
+        "m3-01",
+        "m3-02",
+        "m3-03",
+        "m3-04",
+        "m3-05"
+      ]
+    },
+    {
+      "id": "m4",
+      "title": "AI Agents (Automazioni agentiche professionali)",
+      "lessonIds": [
+        "m4-01",
+        "m4-02",
+        "m4-03",
+        "m4-04",
+        "m4-05",
+        "m4-06"
+      ]
+    },
+    {
+      "id": "m5",
+      "title": "Debugging ed errori (Affidabilità in produzione)",
+      "lessonIds": [
+        "m5-01",
+        "m5-02"
+      ]
+    },
+    {
+      "id": "m6",
+      "title": "Case studies (progetti portfolio-ready)",
+      "lessonIds": [
+        "m6-01",
+        "m6-02",
+        "m6-03",
+        "m6-04",
+        "m6-05"
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-01",
+      "title": "Cos’è n8n",
+      "estMin": 18,
+      "objectives": [
+        "Capire cosa fa n8n e cosa NON fa",
+        "Distinguere nodi, workflow, esecuzioni e credenziali",
+        "Valutare quando usare n8n nel marketing"
+      ],
+      "contentHtml": "<h3>In sintesi</h3>\n<p><strong>n8n</strong> è una piattaforma di <em>workflow automation</em> (automazione di processi) che ti permette di collegare app, database e API, manipolare dati e orchestrare task, con un approccio “low-code” (ma con la possibilità di inserire codice quando serve).</p>\n\n<h3>Concetti chiave</h3>\n<ul>\n  <li><strong>Workflow</strong>: una sequenza di nodi collegati che definisce un processo.</li>\n  <li><strong>Nodo</strong>: un’azione o una logica (es. trigger, HTTP request, trasformazione dati).</li>\n  <li><strong>Trigger</strong>: il punto di partenza (es. webhook, schedule, form submission).</li>\n  <li><strong>Execution</strong>: una “run” del workflow (utile per debug e audit).</li>\n  <li><strong>Credentials</strong>: credenziali salvate centralmente e riutilizzabili.</li>\n</ul>\n\n<h3>Quando è perfetto per un Marketing Strategist/Manager</h3>\n<ul>\n  <li>Lead routing (form → CRM/Sheet → alert su Slack/Telegram/Email)</li>\n  <li>Content ops (brief → generazione → revisione → pubblicazione)</li>\n  <li>Reporting automatico (GA4/Search Console/Ads → dashboard/Sheet → email)</li>\n  <li>AI automation: classificazione, estrazione, RAG, agenti con tool</li>\n</ul>\n\n<h3>Fonti consigliate</h3>\n<ul>\n  <li><a href=\"https://docs.n8n.io/\" target=\"_blank\" rel=\"noreferrer\">n8n Docs (ufficiali)</a></li>\n</ul>\n\n<h3>Mini-esercizio (5 min)</h3>\n<p>Scrivi 3 processi del tuo lavoro marketing che oggi fai “a mano”. Per ognuno, indica:</p>\n<ol>\n  <li>Trigger (cosa lo avvia)</li>\n  <li>Input dati</li>\n  <li>Output atteso</li>\n</ol>",
+      "tags": [
+        "fondamenti",
+        "marketing"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-02",
+      "title": "Introduzione: come studiare “da zero a hero” da professionista",
+      "estMin": 14,
+      "objectives": [
+        "Impostare un piano sostenibile per 2–6 ore/settimana",
+        "Capire la logica modulare e personalizzabile del corso",
+        "Definire un progetto reale su cui esercitarsi"
+      ],
+      "contentHtml": "<h3>Approccio consigliato (professionista in attività)</h3>\n<ul>\n  <li><strong>Impara</strong> (teoria minima) → <strong>Applica</strong> (micro-workflow) → <strong>Standardizza</strong> (sub-workflow + error handling) → <strong>Scala</strong> (AI agent + RAG).</li>\n  <li>Ogni lezione include: obiettivi, pratica e checklist. Completa la checklist per segnare “fatto”.</li>\n</ul>\n\n<h3>Definisci il tuo “progetto guida” (che useremo spesso)</h3>\n<p>Scegli uno di questi (o adattalo):</p>\n<ul>\n  <li><strong>Lead pipeline</strong>: form → qualifica → sheet/CRM → notifica → follow-up.</li>\n  <li><strong>Content pipeline</strong>: idea → brief → bozza → QA → schedulazione → report.</li>\n  <li><strong>Weekly reporting</strong>: Ads + Analytics → KPI → commento → invio.</li>\n</ul>\n\n<h3>Regole d’oro</h3>\n<ol>\n  <li>Automatizza solo processi <strong>ripetibili</strong> e <strong>misurabili</strong>.</li>\n  <li>Prima <strong>riduci complessità</strong> (meno app, meno campi), poi espandi.</li>\n  <li>Ogni workflow deve avere: <strong>logging</strong>, <strong>error handling</strong>, <strong>owner</strong>.</li>\n</ol>\n\n<h3>Output di questa lezione</h3>\n<p>Scrivi il tuo progetto guida in 5 righe: obiettivo, trigger, input, output, KPI (es. tempo risparmiato, errori ridotti, lead contattati più velocemente).</p>",
+      "tags": [
+        "metodo",
+        "productivity"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-03",
+      "title": "Installazione in locale (free) – opzione Docker consigliata",
+      "estMin": 22,
+      "objectives": [
+        "Installare n8n localmente in modo ripetibile",
+        "Capire differenza tra local, server e cloud",
+        "Mettere in sicurezza minima l’ambiente"
+      ],
+      "contentHtml": "<h3>Opzione consigliata: Docker (più pulito e replicabile)</h3>\n    <p>Prerequisiti: Docker Desktop (Windows/Mac) oppure Docker Engine (Linux).</p>\n\n    <h4>Comando rapido (sviluppo locale)</h4>\n    <pre><code>docker volume create n8n_data\ndocker run -it --rm \\\n  -p 5678:5678 \\\n  -v n8n_data:/home/node/.n8n \\\n  -e N8N_DIAGNOSTICS_ENABLED=false \\\n  n8nio/n8n</code></pre>\n\n    <p>Apri: <code>http://localhost:5678</code></p>\n\n    <h4>Consigli pratici</h4>\n    <ul>\n      <li>Usa un <strong>volume</strong> per non perdere credenziali e workflow.</li>\n      <li>Se lo esponi su internet: reverse proxy + HTTPS + auth. In locale evita port forwarding.</li>\n      <li>Versiona i workflow esportandoli in JSON in una repo (Git).</li>\n    </ul>\n\n    <h3>Alternative</h3>\n    <ul>\n      <li><strong>n8n Desktop</strong> (quando disponibile) / installazione manuale Node.js: utile, ma meno standard.</li>\n      <li><strong>Self-host su VPS</strong>: per usare webhook pubblici e automazioni 24/7.</li>\n    </ul>\n\n    <h3>Fonti</h3>\n    <ul>\n      <li><a href=\"https://docs.n8n.io/\" target=\"_blank\" rel=\"noreferrer\">n8n Docs (Setup)</a></li>\n    </ul>\n\n    <h3>Checklist</h3>\n    <ul>\n      <li>n8n avviato e raggiungibile su localhost</li>\n      <li>Creato un primo workflow vuoto e salvato</li>\n      <li>Capito dove si trovano “Credentials” e “Executions”</li>\n    </ul>",
+      "tags": [
+        "setup",
+        "docker"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-04",
+      "title": "Tutorial: come pensare in nodi (mental model)",
+      "estMin": 16,
+      "objectives": [
+        "Trasformare un requisito in una sequenza di nodi",
+        "Impostare input/output e verifiche",
+        "Ridurre attrito quando si cresce in complessità"
+      ],
+      "contentHtml": "<h3>Il mental model</h3>\n<p>Pensa a un workflow come a una pipeline:</p>\n<ol>\n  <li><strong>Trigger</strong> (evento)</li>\n  <li><strong>Enrichment</strong> (aggiungi dati da altre fonti)</li>\n  <li><strong>Transform</strong> (normalizza, pulisci, valida)</li>\n  <li><strong>Decision</strong> (if/switch)</li>\n  <li><strong>Action</strong> (scrivi/manda/notifica)</li>\n  <li><strong>Observability</strong> (log, error workflow, alert)</li>\n</ol>\n\n<h3>Esempio “marketing” (lead da form)</h3>\n<ul>\n  <li>Trigger: Webhook/Form</li>\n  <li>Transform: pulisci email, normalizza nome, calcola fonte</li>\n  <li>Decision: se “budget &gt; X” → sales; altrimenti nurture</li>\n  <li>Action: salva in Sheet/CRM + invia alert su Telegram</li>\n</ul>\n\n<h3>Regole di progettazione</h3>\n<ul>\n  <li><strong>Un workflow = un obiettivo</strong> (evita “mostri” multi-scope)</li>\n  <li><strong>Sub-workflow</strong> per funzioni ripetute (validazione, mapping, notifiche)</li>\n  <li><strong>Idempotenza</strong>: se il workflow gira due volte, non deve creare doppioni</li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Prendi il tuo progetto guida e disegnalo in 6 righe (Trigger → … → Action). Segna dove servono controlli errori.</p>",
+      "tags": [
+        "metodo",
+        "design"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-05",
+      "title": "Interfaccia: canvas, pannelli, executions e pin data",
+      "estMin": 20,
+      "objectives": [
+        "Orientarsi nell’interfaccia di n8n",
+        "Usare executions e pin data per debug",
+        "Mappare campi con drag&drop"
+      ],
+      "contentHtml": "<h3>Componenti principali</h3>\n<ul>\n  <li><strong>Canvas</strong>: dove costruisci i nodi e i collegamenti.</li>\n  <li><strong>Node panel</strong>: parametri del nodo, mapping e opzioni.</li>\n  <li><strong>Executions</strong>: storico delle esecuzioni (success/fail, input/output).</li>\n  <li><strong>Credentials</strong>: gestione delle autenticazioni centralizzata.</li>\n</ul>\n\n<h3>Pin Data: perché ti salva ore</h3>\n<p>“Pinnare” i dati di output di un nodo ti permette di testare i nodi successivi senza dover ri-eseguire l’intero trigger (utile per webhooks e API costose).</p>\n\n<h3>Mapping dati (drag &amp; drop)</h3>\n<p>Molti campi in n8n supportano il trascinamento dei valori dal pannello “Input/Output”. Questo genera automaticamente un’espressione.</p>\n\n<h3>Esercizio</h3>\n<ol>\n  <li>Crea un workflow con <em>Manual Trigger</em>.</li>\n  <li>Aggiungi un nodo che produce JSON (es. Edit Fields/Set) e <strong>pin</strong> l’output.</li>\n  <li>Aggiungi un secondo nodo che usa quei campi via drag &amp; drop.</li>\n</ol>\n\n<h3>Fonti</h3>\n<ul>\n  <li><a href=\"https://docs.n8n.io/\" target=\"_blank\" rel=\"noreferrer\">n8n Docs</a></li>\n</ul>",
+      "tags": [
+        "ui",
+        "debug"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-06",
+      "title": "Trigger nodes: eventi, schedule, webhook e trigger “di app”",
+      "estMin": 24,
+      "objectives": [
+        "Scegliere il trigger giusto",
+        "Capire differenze tra test e produzione",
+        "Evitare duplicazioni e loop"
+      ],
+      "contentHtml": "<h3>Tipi di trigger più comuni</h3>\n<ul>\n  <li><strong>Schedule Trigger</strong>: esegue a intervalli (es. ogni giorno 09:00).</li>\n  <li><strong>Webhook</strong>: riceve chiamate HTTP (form, app, eventi custom).</li>\n  <li><strong>App Trigger</strong> (es. Telegram Trigger, WhatsApp Trigger): si attiva su eventi specifici.</li>\n  <li><strong>Manual Trigger</strong>: utile per costruire e testare.</li>\n</ul>\n\n<h3>Best practice (marketing)</h3>\n<ul>\n  <li>Per lead: Webhook + deduplica (es. hash email+timestamp) prima di scrivere su CRM/Sheet.</li>\n  <li>Per report: Schedule Trigger + range date calcolato dinamicamente.</li>\n  <li>Per chatbot: Trigger di app (Telegram/WhatsApp) + rate limiting + log conversazione.</li>\n</ul>\n\n<h3>Checklist anti-problemi</h3>\n<ul>\n  <li>Hai definito “cosa succede se arriva due volte lo stesso evento”?</li>\n  <li>Hai una “coda” (anche semplice) se i picchi aumentano?</li>\n  <li>Hai un Error Workflow impostato?</li>\n</ul>\n\n<h3>Fonti</h3>\n<ul>\n  <li><a href=\"https://docs.n8n.io/integrations/builtin/trigger-nodes/\" target=\"_blank\" rel=\"noreferrer\">Trigger nodes (docs)</a></li>\n</ul>",
+      "tags": [
+        "trigger",
+        "design"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-07",
+      "title": "Nodi per il controllo di flusso: IF, Switch, Merge, Wait, Stop & Error",
+      "estMin": 28,
+      "objectives": [
+        "Gestire branching e condizioni",
+        "Orchestrare attese e reminder",
+        "Interrompere in modo controllato"
+      ],
+      "contentHtml": "<h3>Nodi chiave</h3>\n<ul>\n  <li><strong>IF</strong>: 2 rami (true/false).</li>\n  <li><strong>Switch</strong>: più casi (es. canale=google/meta/organic).</li>\n  <li><strong>Merge</strong>: ricombina flussi (attenzione a come unisce gli item).</li>\n  <li><strong>Wait</strong>: attese temporizzate (reminder, follow-up).</li>\n  <li><strong>Stop And Error</strong>: ferma l’esecuzione con messaggio (utile per guardrail).</li>\n</ul>\n\n<h3>Esempio: lead routing</h3>\n<ol>\n  <li>IF: email valida?</li>\n  <li>Switch: “source” (ads / referral / organico)</li>\n  <li>Wait: se non c’è risposta in 24h → reminder</li>\n  <li>Stop &amp; Error: se mancano campi obbligatori</li>\n</ol>\n\n<h3>Esercizio</h3>\n<p>Crea un workflow con Manual Trigger che simula 3 lead diversi (vedi lezione “Mock di dati”). Instrada i lead in 3 rami usando Switch e invia una notifica diversa per ogni caso.</p>\n\n<h3>Fonti</h3>\n<ul>\n  <li><a href=\"https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.stopanderror/\" target=\"_blank\" rel=\"noreferrer\">Stop And Error node</a></li>\n</ul>",
+      "tags": [
+        "flow-control",
+        "quality"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-08",
+      "title": "Nodi per la manipolazione di dati: Edit Fields, Code, Item Lists, Date & Time",
+      "estMin": 32,
+      "objectives": [
+        "Normalizzare e trasformare JSON",
+        "Sapere quando usare Code vs nodi no-code",
+        "Preparare dati per strumenti marketing"
+      ],
+      "contentHtml": "<h3>Obiettivo</h3>\n    <p>Nel marketing, la maggior parte del lavoro è <strong>pulizia e mapping dati</strong>: nomi campi, formati date, stringhe, liste.</p>\n\n    <h3>Nodi utili</h3>\n    <ul>\n      <li><strong>Edit Fields (Set)</strong>: crea/riscrive campi in output (fondamentale).</li>\n      <li><strong>Code</strong>: per trasformazioni complesse (con parsimonia).</li>\n      <li><strong>Item Lists</strong>: per filtrare/ordinare/selezionare item.</li>\n      <li><strong>Date &amp; Time</strong>: per formattazione e calcoli temporali.</li>\n    </ul>\n\n    <h3>Pattern pratico</h3>\n    <p><strong>Raw → Normalized → Action</strong></p>\n    <ul>\n      <li>Raw: dati come arrivano (form/webhook/API).</li>\n      <li>Normalized: campi standard (email, nome, fonte, consenso, timestamp).</li>\n      <li>Action: scrivi su CRM/Sheet, invia notifica, crea task.</li>\n    </ul>\n\n    <h3>Mini-esempio (Set)</h3>\n    <pre><code>{\n  \"email\": \"  Mario.Rossi@Example.com \",\n  \"source\": \"Meta Ads\"\n}</code></pre>\n    <p>Normalizzazione attesa: email trim+lowercase, source in slug “meta_ads”.</p>\n\n    <h3>Fonti</h3>\n    <ul>\n      <li><a href=\"https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.set/\" target=\"_blank\" rel=\"noreferrer\">Edit Fields (Set) node</a></li>\n    </ul>",
+      "tags": [
+        "data",
+        "transformation"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-09",
+      "title": "Nodi per applicazioni di terze parti: integrazioni vs HTTP Request",
+      "estMin": 20,
+      "objectives": [
+        "Capire quando usare un nodo “app” e quando HTTP",
+        "Gestire limiti API e paginazione",
+        "Impostare credenziali in modo riutilizzabile"
+      ],
+      "contentHtml": "<h3>Nodo “App” (built-in)</h3>\n<p>Vantaggi: configurazione guidata, mapping semplice, meno errori comuni. Svantaggi: non sempre copre tutte le API.</p>\n\n<h3>HTTP Request</h3>\n<p>È il “coltellino svizzero”: ti permette di chiamare qualsiasi API REST. n8n stesso lo definisce uno dei nodi più versatili.</p>\n\n<h3>Strategia consigliata</h3>\n<ol>\n  <li>Parti dal nodo “App” se esiste (veloce e stabile).</li>\n  <li>Passa a HTTP Request per operazioni mancanti o custom.</li>\n  <li>Documenta in un “Runbook” interno: endpoint, auth, payload, rate limit.</li>\n</ol>\n\n<h3>Fonti</h3>\n<ul>\n  <li><a href=\"https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/\" target=\"_blank\" rel=\"noreferrer\">HTTP Request node (docs)</a></li>\n  <li><a href=\"https://docs.n8n.io/integrations/\" target=\"_blank\" rel=\"noreferrer\">Integrations (docs)</a></li>\n</ul>",
+      "tags": [
+        "integrations",
+        "api"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-10",
+      "title": "Nodi per l’IA: panoramica (LLM, embeddings, tools)",
+      "estMin": 26,
+      "objectives": [
+        "Capire come n8n integra LangChain e AI nodes",
+        "Distinguere chat model, embeddings, agent, tools",
+        "Evitare errori tipici (costi, prompt, hallucinations)"
+      ],
+      "contentHtml": "<h3>AI in n8n (panoramica)</h3>\n<p>n8n include funzionalità AI basate su integrazioni (es. LangChain) per creare chatbot, agenti, classificatori e pipeline di estrazione/riassunto. È disponibile su Cloud e self-hosted (versioni recenti).</p>\n\n<h3>Blocchi principali</h3>\n<ul>\n  <li><strong>Chat Model</strong>: il modello conversazionale (es. Gemini Chat Model).</li>\n  <li><strong>Embeddings</strong>: vettori per RAG (ricerca semantica).</li>\n  <li><strong>AI Agent</strong>: orchestration “tool-using” (sceglie e usa strumenti).</li>\n  <li><strong>Tools</strong>: azioni che l’agente può eseguire (HTTP, DB, Google Docs, ecc.).</li>\n</ul>\n\n<h3>Guardrail essenziali</h3>\n<ul>\n  <li><strong>Prompt con vincoli</strong>: formato output, fonti, limiti.</li>\n  <li><strong>Validation layer</strong>: controlla JSON schema / campi obbligatori.</li>\n  <li><strong>Observability</strong>: log di prompt/risposte (attenzione ai dati sensibili).</li>\n</ul>\n\n<h3>Fonti</h3>\n<ul>\n  <li><a href=\"https://docs.n8n.io/advanced-ai/\" target=\"_blank\" rel=\"noreferrer\">n8n Advanced AI</a></li>\n  <li><a href=\"https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/\" target=\"_blank\" rel=\"noreferrer\">AI Agent node</a></li>\n</ul>",
+      "tags": [
+        "ai",
+        "overview"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-11",
+      "title": "Tipi di dato nativi: item, JSON, binary (e perché ti interessa)",
+      "estMin": 18,
+      "objectives": [
+        "Capire come n8n rappresenta i dati (items)",
+        "Distinguere JSON vs binary",
+        "Sapere dove si rompe una pipeline tipica"
+      ],
+      "contentHtml": "<h3>Come ragiona n8n sui dati</h3>\n<p>n8n passa dati tra nodi come una lista di <strong>items</strong>. Ogni item contiene normalmente <strong>JSON</strong>, e può contenere anche <strong>binary</strong> (file, immagini, PDF).</p>\n\n<h3>Implicazioni pratiche</h3>\n<ul>\n  <li>Se hai 10 items in input, molti nodi eseguono 10 operazioni (una per item).</li>\n  <li>Operazioni su file (OCR, allegati) usano spesso <strong>binary data</strong>.</li>\n  <li>Gli errori più comuni: aspettarsi 1 item e riceverne N; perdere binary lungo la pipeline.</li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Crea un workflow che generi 3 items (mock) e verifica come cambia l’output quando usi un nodo di trasformazione: cosa succede item per item?</p>",
+      "tags": [
+        "data",
+        "fundamentals"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-12",
+      "title": "Tipi di dato: oggetti (object) e accesso ai campi",
+      "estMin": 22,
+      "objectives": [
+        "Accedere correttamente a campi annidati",
+        "Evitare errori su chiavi mancanti",
+        "Mappare oggetti su strumenti esterni (Sheet/CRM)"
+      ],
+      "contentHtml": "<h3>Oggetti annidati: tipico caso</h3>\n    <pre><code>{\n  \"lead\": {\n    \"name\": \"Mario Rossi\",\n    \"email\": \"mario@example.com\",\n    \"utm\": {\"source\": \"google\", \"campaign\": \"brand\"}\n  }\n}</code></pre>\n\n    <h3>Accesso ai campi</h3>\n    <ul>\n      <li>In mapping puoi usare drag&amp;drop per generare l’espressione corretta.</li>\n      <li>Quando un campo può mancare, usa valori di default (es. stringa vuota) o un IF prima dell’azione.</li>\n    </ul>\n\n    <h3>Pattern di normalizzazione</h3>\n    <p>Con Edit Fields, crea campi piatti: <code>lead_email</code>, <code>utm_source</code>, <code>utm_campaign</code>. Quasi tutti gli strumenti marketing lavorano meglio con campi “flat”.</p>\n\n    <h3>Esercizio</h3>\n    <p>Dato l’oggetto sopra, crea un output “flat” con 5 campi. Poi mappa quei campi in un’azione (anche fittizia).</p>",
+      "tags": [
+        "data",
+        "json"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-13",
+      "title": "Tipi di dato: liste (array) e iterazioni",
+      "estMin": 26,
+      "objectives": [
+        "Capire come n8n gestisce array e multi-item",
+        "Estrarre, filtrare e trasformare liste",
+        "Preparare liste per email/ads/report"
+      ],
+      "contentHtml": "<h3>Liste nel marketing</h3>\n<ul>\n  <li>Elenco campagne, keywords, creatività</li>\n  <li>Lista di prodotti, SKU, prezzi</li>\n  <li>Lista di task o follow-up</li>\n</ul>\n\n<h3>Strategie</h3>\n<ol>\n  <li><strong>Array dentro un item</strong>: un singolo item con una proprietà <code>items: []</code>.</li>\n  <li><strong>Multi-item</strong>: ogni elemento della lista diventa un item separato (spesso più comodo per batch).</li>\n</ol>\n\n<h3>Esercizio</h3>\n<p>Parti da un item con una lista di 5 campagne, trasformala in 5 items (uno per campagna). Filtra solo quelle con CPA &lt; soglia.</p>",
+      "tags": [
+        "data",
+        "arrays"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-14",
+      "title": "Introduzione al nodo “Edit Fields (Set)” (il tuo migliore amico)",
+      "estMin": 30,
+      "objectives": [
+        "Usare Set per creare e sovrascrivere campi",
+        "Capire opzioni: Keep only set fields / Include in output",
+        "Costruire un “normalized payload” standard"
+      ],
+      "contentHtml": "<h3>Perché è centrale</h3>\n    <p>L’Edit Fields (Set) node permette di impostare nuovi campi o sovrascriverli. È cruciale quando devi preparare un payload per Google Sheets, DB o API.</p>\n\n    <h3>Parametri importanti</h3>\n    <ul>\n      <li><strong>Keep Only Set Fields</strong>: se attivo, elimina tutto ciò che non stai impostando (utile per pulire).</li>\n      <li><strong>Include in Output</strong>: decide quali campi originali mantenere.</li>\n      <li><strong>Include Binary Data</strong> (opzioni): conserva file se presenti.</li>\n    </ul>\n\n    <h3>Pattern: “Normalized Lead”</h3>\n    <pre><code>{\n  \"lead_email\": \"mario@example.com\",\n  \"lead_name\": \"Mario Rossi\",\n  \"source\": \"meta_ads\",\n  \"consent_marketing\": true,\n  \"created_at\": \"2026-01-06T10:15:00+01:00\"\n}</code></pre>\n\n    <h3>Esercizio</h3>\n    <p>Crea un nodo Set che produca esattamente questo oggetto (con valori a piacere). Prova sia con “Keep Only Set Fields” acceso che spento e confronta l’output.</p>\n\n    <h3>Fonti</h3>\n    <ul>\n      <li><a href=\"https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.set/\" target=\"_blank\" rel=\"noreferrer\">Edit Fields (Set) node</a></li>\n    </ul>",
+      "tags": [
+        "set",
+        "data-mapping"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-15",
+      "title": "Espressioni in n8n: split e trim (pulizia dati)",
+      "estMin": 24,
+      "objectives": [
+        "Pulire input “sporchi” di form e CRM",
+        "Spezzare stringhe e ricomporle",
+        "Creare regole ripetibili di normalizzazione"
+      ],
+      "contentHtml": "<h3>Perché è importante</h3>\n<p>Nei form reali trovi spazi, maiuscole, separatori inconsistenti. Le espressioni ti permettono di normalizzare senza codice.</p>\n\n<h3>Esempi tipici</h3>\n<ul>\n  <li><strong>Trim</strong>: rimuovi spazi iniziali/finali.</li>\n  <li><strong>Split</strong>: separa “Nome Cognome” o CSV di tag.</li>\n</ul>\n\n<h3>Pattern “email clean”</h3>\n<pre><code>{{ $json.email.trim().toLowerCase() }}</code></pre>\n\n<h3>Pattern “tag list”</h3>\n<pre><code>{{ $json.tags.split(',').map(t =&gt; t.trim()) }}</code></pre>\n\n<h3>Esercizio</h3>\n<p>Dato: <code>\"  SEO,  ADS ,Email Marketing \"</code> genera un array pulito. Poi riconverti in stringa con separatore “|”.</p>",
+      "tags": [
+        "expressions",
+        "data-cleaning"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-16",
+      "title": "Espressioni: formattazione di date (reporting e automazioni)",
+      "estMin": 26,
+      "objectives": [
+        "Formattare date per API e report",
+        "Calcolare range dinamici (last 7 days, month-to-date)",
+        "Evitare problemi di timezone"
+      ],
+      "contentHtml": "<h3>Perché nel marketing è ovunque</h3>\n<ul>\n  <li>Report settimanali e mensili</li>\n  <li>Finestra di attribution</li>\n  <li>Follow-up a 24/48/72 ore</li>\n</ul>\n\n<h3>Consigli</h3>\n<ul>\n  <li>Standardizza in ISO 8601 quando possibile.</li>\n  <li>Esplicita timezone in output se l’API lo richiede.</li>\n</ul>\n\n<h3>Esempio: “oggi” in ISO</h3>\n<pre><code>{{ new Date().toISOString() }}</code></pre>\n\n<h3>Esempio: “ultimi 7 giorni” (start date)</h3>\n<pre><code>{{ new Date(Date.now() - 7*24*60*60*1000).toISOString() }}</code></pre>\n\n<h3>Esercizio</h3>\n<p>Costruisci due campi: <code>date_from</code> (7 giorni fa) e <code>date_to</code> (oggi). Visualizzali in output con Edit Fields.</p>",
+      "tags": [
+        "expressions",
+        "dates"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-17",
+      "title": "Espressioni: confronto fra date (SLA, reminder, scadenze)",
+      "estMin": 22,
+      "objectives": [
+        "Confrontare date per decidere rami IF/Switch",
+        "Creare reminder solo quando serve",
+        "Gestire scadenze di contenuti o campagne"
+      ],
+      "contentHtml": "<h3>Scenario reale</h3>\n<p>Se un lead non è stato contattato entro 24 ore → alert. Se una campagna scade entro 3 giorni → reminder.</p>\n\n<h3>Esempio: differenza in ore</h3>\n<pre><code>{{ (Date.now() - new Date($json.last_contact_at).getTime()) / (1000*60*60) }}</code></pre>\n\n<h3>IF: alert se &gt; 24h</h3>\n<pre><code>{{ ((Date.now() - new Date($json.last_contact_at).getTime()) / (1000*60*60)) &gt; 24 }}</code></pre>\n\n<h3>Esercizio</h3>\n<p>Crea un mock con <code>last_contact_at</code> (una data di ieri) e instrada il flusso su due rami: &lt; 24h e &gt;= 24h. Nel ramo alert, usa Stop &amp; Error con messaggio esplicativo.</p>",
+      "tags": [
+        "expressions",
+        "sla"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-18",
+      "title": "Espressioni: e-mail e stringhe (validazione e personalizzazione)",
+      "estMin": 24,
+      "objectives": [
+        "Validare email in modo pragmatico",
+        "Comporre oggetti testuali (subject, preview, CTA)",
+        "Evitare injection e formati rotti"
+      ],
+      "contentHtml": "<h3>Validazione email (pragmatica)</h3>\n<p>Una regex perfetta è difficile; per automazioni marketing spesso basta una validazione “buona”.</p>\n<pre><code>{{ /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test($json.email.trim()) }}</code></pre>\n\n<h3>Composizione stringhe</h3>\n<pre><code>{{ `Ciao ${$json.name}, ecco il tuo report di ${$json.period}` }}</code></pre>\n\n<h3>Sanitizzazione minima</h3>\n<ul>\n  <li>Trim e normalize</li>\n  <li>Escape se inserisci in HTML</li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Costruisci un subject email che includa: settimana ISO + nome brand + KPI principale (es. ROAS). Se email non valida, manda a un ramo “quarantena”.</p>",
+      "tags": [
+        "expressions",
+        "email"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-19",
+      "title": "Mock di dati in n8n: test veloci senza dipendenze",
+      "estMin": 18,
+      "objectives": [
+        "Creare dati fittizi realistici per marketing",
+        "Testare flussi senza chiamare API esterne",
+        "Preparare dataset per esercitazioni"
+      ],
+      "contentHtml": "<h3>Perché ti serve</h3>\n<p>Prima di collegarti a Google/Meta/CRM, testa con dati realistici: riduci costi, errori e tempi.</p>\n\n<h3>Metodi</h3>\n<ul>\n  <li><strong>Edit Fields (Set)</strong>: definisci manualmente i campi.</li>\n  <li><strong>Code</strong>: genera N record con random controllato.</li>\n  <li><strong>Pin data</strong>: “congela” un output per testare nodi a valle.</li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Crea 5 lead mock con campi: email, nome, source, budget stimato. Aggiungi un campo <code>lead_score</code> calcolato (es. budget + fonte).</p>",
+      "tags": [
+        "testing",
+        "mock"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-20",
+      "title": "Trasformazione dati: da payload grezzo a schema standard",
+      "estMin": 30,
+      "objectives": [
+        "Definire uno schema standard per lead/report",
+        "Costruire mapping riutilizzabile",
+        "Preparare la base per sub-workflow e RAG"
+      ],
+      "contentHtml": "<h3>Obiettivo</h3>\n<p>Un’azienda scala automazioni quando standardizza gli schemi. Nel marketing: lead, campagne, contenuti, report.</p>\n\n<h3>Schema standard (esempio lead)</h3>\n<ul>\n  <li>lead_email, lead_name</li>\n  <li>utm_source, utm_campaign</li>\n  <li>consent, created_at</li>\n  <li>score, owner</li>\n</ul>\n\n<h3>Passi</h3>\n<ol>\n  <li>Identifica campi “must-have” e “nice-to-have”.</li>\n  <li>Mappa ogni fonte (form A, form B, CRM) → schema unico.</li>\n  <li>Valida: email obbligatoria, consent se richiesto, timestamp sempre presente.</li>\n  <li>Documenta e versione lo schema.</li>\n</ol>\n\n<h3>Esercizio</h3>\n<p>Prendi due payload diversi (inventali): uno da form, uno da CRM. Trasformali entrambi nello stesso schema “lead standard”.</p>",
+      "tags": [
+        "data",
+        "standardization"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-21",
+      "title": "Un esempio di Workflow base (lead → sheet → notifica)",
+      "estMin": 28,
+      "objectives": [
+        "Costruire un workflow end-to-end semplice",
+        "Applicare mapping e controllo flusso",
+        "Preparare la base per case studies"
+      ],
+      "contentHtml": "<h3>Obiettivo del workflow</h3>\n<p>Quando arriva un lead (mock), normalizza i campi e invia una notifica (es. Telegram). In alternativa, salva su Google Sheet.</p>\n\n<h3>Struttura nodi</h3>\n<ol>\n  <li>Manual Trigger</li>\n  <li>Edit Fields (Set) → crea un lead standard</li>\n  <li>IF → email valida?</li>\n  <li>(Ramo OK) → Telegram “Send Message” / Email / Sheet “Append”</li>\n  <li>(Ramo KO) → Stop And Error con motivo</li>\n</ol>\n\n<h3>Output atteso</h3>\n<ul>\n  <li>Notifica con: nome, email, fonte, score, link a CRM/Sheet</li>\n  <li>Execution log leggibile</li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Costruisci il workflow con dati mock. Se hai già Telegram configurato, invia un messaggio; altrimenti usa un semplice nodo “NoOp” come placeholder.</p>\n\n<h3>Fonti</h3>\n<ul>\n  <li><a href=\"https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/\" target=\"_blank\" rel=\"noreferrer\">Telegram node</a></li>\n</ul>",
+      "tags": [
+        "workflow",
+        "end-to-end"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-22",
+      "title": "Esercitazione: Submission Form con notifica automatica – Traccia",
+      "estMin": 20,
+      "objectives": [
+        "Progettare una soluzione completa da requisiti",
+        "Definire schema, validazioni e output",
+        "Impostare un workflow pronto per produzione"
+      ],
+      "contentHtml": "<h3>Scenario</h3>\n<p>Hai un form (o un webhook) che invia: nome, email, azienda, messaggio, fonte (utm). Vuoi una notifica immediata al team marketing/sales.</p>\n\n<h3>Requisiti</h3>\n<ul>\n  <li>Normalizza email e nome (trim/lowercase)</li>\n  <li>Calcola <code>lead_score</code> (es. presenza azienda + fonte)</li>\n  <li>Se email non valida → quarantena (log + alert interno)</li>\n  <li>Se valida → invia notifica con messaggio formattato</li>\n  <li>Salva sempre l’evento in un log (anche semplice: file/Sheet/DB)</li>\n</ul>\n\n<h3>Deliverable</h3>\n<ul>\n  <li>Workflow con almeno 5 nodi</li>\n  <li>Un template messaggio “notifica lead” con campi e CTA</li>\n  <li>Regola di deduplica (es. stesso email entro 10 min)</li>\n</ul>\n\n<h3>Consiglio</h3>\n<p>Se non hai un form reale, usa Webhook Trigger e invia un POST con JSON da Postman o curl.</p>",
+      "tags": [
+        "exercise",
+        "lead-gen"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m1",
+      "moduleTitle": "Introduzione a n8n (Zero → Fondamenta)",
+      "id": "m1-23",
+      "title": "Esercitazione: Submission Form con notifica automatica – Soluzione",
+      "estMin": 34,
+      "objectives": [
+        "Implementare la traccia passo-passo",
+        "Aggiungere deduplica e quarantena",
+        "Rendere il workflow “production-ready” con log e guardrail"
+      ],
+      "contentHtml": "<h3>Soluzione – architettura</h3>\n    <ol>\n      <li><strong>Webhook Trigger</strong> (o Manual Trigger per test)</li>\n      <li><strong>Edit Fields (Set)</strong>: normalizzazione (email/name), mapping UTM</li>\n      <li><strong>IF</strong>: email valida?</li>\n      <li><strong>IF</strong> (deduplica): se stesso email entro 10 min → Stop And Error “duplicate lead”</li>\n      <li><strong>Action</strong>:\n        <ul>\n          <li>Ramo OK: Telegram/Email/Slack notifica</li>\n          <li>Ramo KO: invio alert interno + log in quarantena</li>\n        </ul>\n      </li>\n    </ol>\n\n    <h3>Deduplica semplice (pattern)</h3>\n    <p>Approccio minimale senza DB: mantieni un log (Sheet/DB). Prima di inserire un nuovo lead, fai una ricerca per email e timestamp recente.</p>\n\n    <h3>Template notifica (esempio)</h3>\n    <pre><code>🆕 Nuovo Lead\nNome: {{ $json.lead_name }}\nEmail: {{ $json.lead_email }}\nAzienda: {{ $json.company || '—' }}\nFonte: {{ $json.utm_source || '—' }} / {{ $json.utm_campaign || '—' }}\nScore: {{ $json.lead_score }}\nMessaggio: {{ $json.message }}</code></pre>\n\n    <h3>Checklist “production-ready”</h3>\n    <ul>\n      <li>Error Workflow configurato</li>\n      <li>Log persistente (minimo: Sheet/DB)</li>\n      <li>Deduplica o idempotency key</li>\n      <li>Campi obbligatori validati</li>\n      <li>Nessuna credenziale hardcoded</li>\n    </ul>",
+      "tags": [
+        "exercise",
+        "solution"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m2",
+      "moduleTitle": "Utilizzare servizi ed API (Integrare qualsiasi cosa)",
+      "id": "m2-01",
+      "title": "Cosa sono le API (per automazioni marketing)",
+      "estMin": 18,
+      "objectives": [
+        "Capire REST, endpoint, method, headers, auth",
+        "Sapere leggere una doc API",
+        "Definire una chiamata utile per un caso marketing"
+      ],
+      "contentHtml": "<h3>API in 6 concetti</h3>\n<ul>\n  <li><strong>Endpoint</strong>: l’URL della risorsa (es. /leads, /reports).</li>\n  <li><strong>Method</strong>: GET/POST/PUT/PATCH/DELETE.</li>\n  <li><strong>Headers</strong>: metadati (auth, content-type).</li>\n  <li><strong>Body</strong>: payload (di solito JSON) per POST/PATCH.</li>\n  <li><strong>Status code</strong>: 200 OK, 201 Created, 400/401/403, 500…</li>\n  <li><strong>Rate limit</strong>: limiti di chiamate (gestire retry e backoff).</li>\n</ul>\n\n<h3>Auth principali</h3>\n<ul>\n  <li><strong>API key</strong> (semplice, ma da proteggere)</li>\n  <li><strong>Bearer token</strong> (token temporanei)</li>\n  <li><strong>OAuth 2.0</strong> (Google e altri)</li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Scegli un servizio che usi (es. CRM/email/ads) e trova 1 endpoint utile (anche solo “create contact”). Scrivi: method, URL, auth richiesta, body minimo.</p>",
+      "tags": [
+        "api",
+        "fundamentals"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m2",
+      "moduleTitle": "Utilizzare servizi ed API (Integrare qualsiasi cosa)",
+      "id": "m2-02",
+      "title": "Il Nodo HTTP Request: chiamate REST robuste",
+      "estMin": 34,
+      "objectives": [
+        "Configurare GET/POST con query, headers e body",
+        "Gestire auth, paginazione e retry",
+        "Debuggare richieste e risposte"
+      ],
+      "contentHtml": "<h3>Perché è il nodo più importante</h3>\n<p>Il nodo <strong>HTTP Request</strong> ti permette di interrogare qualsiasi servizio con API REST e può anche essere usato come tool per un AI Agent.</p>\n\n<h3>Setup base</h3>\n<ol>\n  <li>Method: GET/POST</li>\n  <li>URL: endpoint</li>\n  <li>Authentication: None / Header Auth / OAuth2 / ecc.</li>\n  <li>Send Headers: Content-Type: application/json</li>\n  <li>Response: JSON</li>\n</ol>\n\n<h3>Best practice</h3>\n<ul>\n  <li><strong>Timeout &amp; retry</strong>: per evitare workflow “bloccati”.</li>\n  <li><strong>Pagination</strong>: usa cursori o page+limit (dipende dall’API).</li>\n  <li><strong>Rate limit</strong>: inserisci Wait o batching se necessario.</li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Chiama una API pubblica (es. un endpoint demo) e salva nel workflow: status, headers rilevanti, body JSON. Poi crea un Set “normalized response”.</p>\n\n<h3>Fonti</h3>\n<ul>\n  <li><a href=\"https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/\" target=\"_blank\" rel=\"noreferrer\">HTTP Request node</a></li>\n  <li><a href=\"https://docs.n8n.io/code/cookbook/http-node/\" target=\"_blank\" rel=\"noreferrer\">HTTP node cookbook (examples)</a></li>\n</ul>",
+      "tags": [
+        "api",
+        "http"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m2",
+      "moduleTitle": "Utilizzare servizi ed API (Integrare qualsiasi cosa)",
+      "id": "m2-03",
+      "title": "Configurare credenziali Google (OAuth): schema mentale + passi",
+      "estMin": 30,
+      "objectives": [
+        "Capire OAuth consent screen, client ID/secret, scopes",
+        "Impostare un progetto Google Cloud per n8n",
+        "Ridurre rischi (scopes minimi, test users)"
+      ],
+      "contentHtml": "<h3>Che cosa stai facendo davvero</h3>\n<p>Con OAuth 2.0 stai autorizzando n8n ad accedere a risorse Google (es. Drive, Sheets, Gmail) con permessi controllati (<em>scopes</em>).</p>\n\n<h3>Passi tipici (high-level)</h3>\n<ol>\n  <li>Crea un progetto su Google Cloud</li>\n  <li>Configura <strong>OAuth consent screen</strong> (nome app, email supporto, test users)</li>\n  <li>Crea <strong>OAuth client</strong> (client ID e secret)</li>\n  <li>Imposta redirect URL richiesti da n8n</li>\n  <li>In n8n: crea le credenziali OAuth2 e collega il nodo Google (Sheets/Docs/Drive…)</li>\n</ol>\n\n<h3>Best practice</h3>\n<ul>\n  <li>Richiedi <strong>solo scopes necessari</strong>.</li>\n  <li>Usa un account dedicato per automazioni (non il tuo personale).</li>\n  <li>Se vai in produzione con scopes sensibili, informati su eventuale verifica.</li>\n</ul>\n\n<h3>Fonti</h3>\n<ul>\n  <li><a href=\"https://developers.google.com/workspace/guides/configure-oauth-consent\" target=\"_blank\" rel=\"noreferrer\">Google: configure OAuth consent</a></li>\n  <li><a href=\"https://support.google.com/googleapi/answer/6158849\" target=\"_blank\" rel=\"noreferrer\">Google API Console: OAuth setup</a></li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Definisci 1 automazione Google (es. append in Google Sheets). Elenca gli scopes minimi (anche a livello descrittivo) e i dati che passeranno.</p>",
+      "tags": [
+        "google",
+        "oauth"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m2",
+      "moduleTitle": "Utilizzare servizi ed API (Integrare qualsiasi cosa)",
+      "id": "m2-04",
+      "title": "Configurare le credenziali di WhatsApp (WhatsApp Business Cloud)",
+      "estMin": 28,
+      "objectives": [
+        "Capire prerequisiti WhatsApp Business Platform",
+        "Ottenere token e Phone Number ID",
+        "Collegare n8n al nodo WhatsApp Business Cloud"
+      ],
+      "contentHtml": "<h3>Panoramica</h3>\n<p>Per integrare WhatsApp in modo ufficiale e scalabile si usa la <strong>WhatsApp Business Platform (Cloud)</strong> di Meta. In n8n esiste un nodo dedicato “WhatsApp Business Cloud”.</p>\n\n<h3>Requisiti comuni</h3>\n<ul>\n  <li>Account Meta Developer / Business</li>\n  <li>App con prodotto WhatsApp configurato</li>\n  <li>Access token (User/System) e identificativi (es. Phone Number ID)</li>\n</ul>\n\n<h3>Setup in n8n (concettuale)</h3>\n<ol>\n  <li>Crea credenziale “WhatsApp Business Cloud” in n8n</li>\n  <li>Inserisci token e parametri richiesti</li>\n  <li>Test: invio di un messaggio di prova o ricezione con WhatsApp Trigger</li>\n</ol>\n\n<h3>Note operative</h3>\n<ul>\n  <li>In produzione, preferisci token “stabili” (system user) e ruoli corretti.</li>\n  <li>Gestisci templates, policy e limiti di invio (dipendono dall’account).</li>\n</ul>\n\n<h3>Fonti</h3>\n<ul>\n  <li><a href=\"https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.whatsapp/\" target=\"_blank\" rel=\"noreferrer\">n8n: WhatsApp Business Cloud node</a></li>\n  <li><a href=\"https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens/\" target=\"_blank\" rel=\"noreferrer\">Meta: WhatsApp access tokens</a></li>\n  <li><a href=\"https://business.whatsapp.com/developers/developer-hub\" target=\"_blank\" rel=\"noreferrer\">WhatsApp Business Platform: developer hub</a></li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Disegna il flusso “lead qualificato → WhatsApp follow-up” indicando: trigger, template messaggio, e come gestire opt-in/consenso.</p>",
+      "tags": [
+        "whatsapp",
+        "meta"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m2",
+      "moduleTitle": "Utilizzare servizi ed API (Integrare qualsiasi cosa)",
+      "id": "m2-05",
+      "title": "Configurare credenziali Telegram e bot con Gemini",
+      "estMin": 36,
+      "objectives": [
+        "Creare un bot Telegram (BotFather) e ottenere token",
+        "Configurare Telegram Trigger/Node in n8n",
+        "Collegare Gemini per risposte assistite"
+      ],
+      "contentHtml": "<h3>Step 1 – Crea il bot Telegram</h3>\n<ol>\n  <li>Apri Telegram e cerca <strong>@BotFather</strong></li>\n  <li>Esegui il comando <code>/newbot</code> e segui la procedura</li>\n  <li>Ottieni il <strong>bot token</strong></li>\n</ol>\n\n<h3>Step 2 – Configura n8n</h3>\n<ul>\n  <li>Usa <strong>Telegram Trigger</strong> per ricevere messaggi</li>\n  <li>Usa <strong>Telegram node</strong> per inviare risposte</li>\n  <li>Inserisci il token nelle credenziali Telegram di n8n</li>\n</ul>\n\n<h3>Step 3 – Integra Gemini</h3>\n<p>Puoi usare:</p>\n<ul>\n  <li><strong>Google Gemini node</strong> (operazioni generali) oppure</li>\n  <li><strong>Gemini Chat Model</strong> come modello per un agente conversazionale</li>\n</ul>\n<p>Per Gemini ti serve una <strong>API key</strong> (Google AI Studio).</p>\n\n<h3>Mini-architettura</h3>\n<ol>\n  <li>Telegram Trigger (nuovo messaggio)</li>\n  <li>Set: costruisci prompt (contesto + domanda)</li>\n  <li>Gemini (risposta)</li>\n  <li>Telegram: invia messaggio</li>\n</ol>\n\n<h3>Fonti</h3>\n<ul>\n  <li><a href=\"https://core.telegram.org/bots/tutorial\" target=\"_blank\" rel=\"noreferrer\">Telegram: Bot tutorial (BotFather)</a></li>\n  <li><a href=\"https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/\" target=\"_blank\" rel=\"noreferrer\">n8n: Telegram node</a></li>\n  <li><a href=\"https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.telegramtrigger/\" target=\"_blank\" rel=\"noreferrer\">n8n: Telegram Trigger</a></li>\n  <li><a href=\"https://ai.google.dev/gemini-api/docs/api-key\" target=\"_blank\" rel=\"noreferrer\">Google: Gemini API key</a></li>\n  <li><a href=\"https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-langchain.googlegemini/\" target=\"_blank\" rel=\"noreferrer\">n8n: Google Gemini node</a></li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Costruisci un bot che: (1) riceve un messaggio, (2) lo riassume in 1 frase con Gemini, (3) risponde con il riassunto.</p>",
+      "tags": [
+        "telegram",
+        "gemini",
+        "ai"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m2",
+      "moduleTitle": "Utilizzare servizi ed API (Integrare qualsiasi cosa)",
+      "id": "m2-06",
+      "title": "Workflow con API: pattern riutilizzabili (auth, pagination, batching)",
+      "estMin": 34,
+      "objectives": [
+        "Implementare pattern standard per chiamate API",
+        "Gestire paginazione e rate limit",
+        "Rendere il workflow manutenibile"
+      ],
+      "contentHtml": "<h3>Pattern 1: Wrapper API</h3>\n<p>Crea un mini-subworkflow “API_CALL” che accetta: method, url, headers, body, e restituisce: status, data, error. Ti permette di centralizzare retry e log.</p>\n\n<h3>Pattern 2: Pagination</h3>\n<ul>\n  <li>Page+limit: incrementi page finché <code>items.length == 0</code></li>\n  <li>Cursor: usi <code>next_cursor</code> finché presente</li>\n</ul>\n\n<h3>Pattern 3: Batching</h3>\n<p>Se devi inviare 1.000 record (es. contatti), inviali a blocchi da 50–100. Inserisci Wait se l’API ha limiti stringenti.</p>\n\n<h3>Observability</h3>\n<ul>\n  <li>Log: endpoint + status + latency (se possibile)</li>\n  <li>Error workflow: notifiche solo per errori “actionable”</li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Simula una paginazione con dati mock: 3 pagine, 10 item ciascuna. Unisci tutto in un’unica lista e calcola un KPI (es. somma costi).</p>",
+      "tags": [
+        "api",
+        "patterns"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m2",
+      "moduleTitle": "Utilizzare servizi ed API (Integrare qualsiasi cosa)",
+      "id": "m2-07",
+      "title": "Un primo rudimentale agente con API e Telegram (senza AI Agent)",
+      "estMin": 38,
+      "objectives": [
+        "Creare un “assistant” rule-based via Telegram",
+        "Chiamare un’API esterna su comando",
+        "Restituire output formattato per un marketer"
+      ],
+      "contentHtml": "<h3>Obiettivo</h3>\n<p>Costruire un bot Telegram che risponde a comandi semplici e interroga un’API (anche fittizia).</p>\n\n<h3>Comandi suggeriti</h3>\n<ul>\n  <li><code>/kpi today</code> → restituisce KPI giornalieri</li>\n  <li><code>/kpi last7</code> → KPI ultimi 7 giorni</li>\n  <li><code>/help</code> → lista comandi</li>\n</ul>\n\n<h3>Nodi</h3>\n<ol>\n  <li>Telegram Trigger (message)</li>\n  <li>Set: parse comando (split)</li>\n  <li>Switch: instrada su base comando</li>\n  <li>HTTP Request: chiama endpoint KPI</li>\n  <li>Set: formatta risposta (stringhe + date)</li>\n  <li>Telegram: invia messaggio</li>\n</ol>\n\n<h3>Best practice</h3>\n<ul>\n  <li>Validazione input (comando non riconosciuto → help)</li>\n  <li>Limitazione (solo chat_id autorizzati) per evitare abusi</li>\n  <li>Error workflow per fallimenti API</li>\n</ul>\n\n<h3>Fonti</h3>\n<ul>\n  <li><a href=\"https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/\" target=\"_blank\" rel=\"noreferrer\">n8n: HTTP Request</a></li>\n  <li><a href=\"https://core.telegram.org/bots/api\" target=\"_blank\" rel=\"noreferrer\">Telegram Bot API</a></li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Implementa <code>/kpi last7</code> con output in 5 righe: spesa, conversioni, CPL, ROAS, nota automatica (if ROAS &lt; soglia → warning).</p>",
+      "tags": [
+        "telegram",
+        "api",
+        "bot"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m3",
+      "moduleTitle": "Sub-workflows (Scalare e riusare)",
+      "id": "m3-01",
+      "title": "Introduzione ai Sub-Workflows: perché ti fanno scalare",
+      "estMin": 18,
+      "objectives": [
+        "Capire quando estrarre un sub-workflow",
+        "Ridurre duplicazioni e bug",
+        "Organizzare una libreria interna di funzioni"
+      ],
+      "contentHtml": "<h3>Che cosa sono</h3>\n<p>I sub-workflow ti permettono di riusare parti di logica come “funzioni”: validazione, mapping, notifiche, logging.</p>\n\n<h3>Quando usarli</h3>\n<ul>\n  <li>La stessa sequenza compare in 2+ workflow</li>\n  <li>Vuoi standardizzare uno schema (lead/report)</li>\n  <li>Vuoi isolare integrazioni fragili (API esterne)</li>\n</ul>\n\n<h3>Regola pratica</h3>\n<p>Se un blocco supera ~8–10 nodi e lo riusi, estrailo.</p>\n\n<h3>Fonti</h3>\n<ul>\n  <li><a href=\"https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executeworkflow/\" target=\"_blank\" rel=\"noreferrer\">Execute Sub-workflow node</a></li>\n</ul>",
+      "tags": [
+        "subworkflow",
+        "architecture"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m3",
+      "moduleTitle": "Sub-workflows (Scalare e riusare)",
+      "id": "m3-02",
+      "title": "Creare un sub-workflow su n8n (Execute Sub-workflow + Trigger)",
+      "estMin": 28,
+      "objectives": [
+        "Creare un workflow chiamabile come sub-workflow",
+        "Definire input attesi e output",
+        "Chiamarlo dal workflow principale e tracciare sub-executions"
+      ],
+      "contentHtml": "<h3>Step</h3>\n<ol>\n  <li>Crea un nuovo workflow “UTIL_validate_lead”</li>\n  <li>Aggiungi <strong>Execute Sub-workflow Trigger</strong> (il punto di ingresso)</li>\n  <li>Definisci input: email, name, source</li>\n  <li>Implementa validazioni e restituisci output normalizzato</li>\n  <li>Nel workflow principale usa <strong>Execute Sub-workflow</strong> per chiamarlo</li>\n</ol>\n\n<h3>Passaggio dati</h3>\n<p>Il nodo Execute Sub-workflow invia i dati al trigger del sub-workflow e riceve l’output dall’ultimo nodo del sub-workflow.</p>\n\n<h3>Debug</h3>\n<p>Usa “View sub-execution” per seguire il flusso tra parent e sub-workflow.</p>\n\n<h3>Fonti</h3>\n<ul>\n  <li><a href=\"https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executeworkflow/\" target=\"_blank\" rel=\"noreferrer\">Execute Sub-workflow</a></li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Crea un sub-workflow “UTIL_slugify” che riceve una stringa e restituisce slug (lowercase, spazi→underscore, rimozione caratteri speciali). Riutilizzalo in 2 workflow.</p>",
+      "tags": [
+        "subworkflow",
+        "implementation"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m3",
+      "moduleTitle": "Sub-workflows (Scalare e riusare)",
+      "id": "m3-03",
+      "title": "Sub-workflow per la validazione di dati (lead & reporting)",
+      "estMin": 30,
+      "objectives": [
+        "Costruire un validatore riutilizzabile",
+        "Restituire errori strutturati",
+        "Implementare “quarantine flow”"
+      ],
+      "contentHtml": "<h3>Obiettivo</h3>\n    <p>Standardizza la validazione di input: se i dati non rispettano i requisiti, non procedere con azioni irreversibili (es. scrittura CRM).</p>\n\n    <h3>Input</h3>\n    <p>email, name, consent, source, created_at</p>\n\n    <h3>Output consigliato</h3>\n    <pre><code>{\n  \"ok\": true,\n  \"errors\": [],\n  \"normalized\": { ... }\n}</code></pre>\n\n    <h3>Errori strutturati</h3>\n    <pre><code>{\n  \"field\": \"email\",\n  \"code\": \"INVALID_EMAIL\",\n  \"message\": \"Email non valida\"\n}</code></pre>\n\n    <h3>Esercizio</h3>\n    <p>Implementa il validatore come sub-workflow e usalo nel workflow della lezione “Submission Form”. Se <code>ok=false</code>, manda su un ramo quarantena e salva l’errore.</p>",
+      "tags": [
+        "validation",
+        "quality"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m3",
+      "moduleTitle": "Sub-workflows (Scalare e riusare)",
+      "id": "m3-04",
+      "title": "Notifiche temporizzate con sub-workflow (reminder intelligenti)",
+      "estMin": 28,
+      "objectives": [
+        "Creare reminder basati su SLA",
+        "Evitare spam di notifiche",
+        "Centralizzare template messaggi"
+      ],
+      "contentHtml": "<h3>Scenario</h3>\n<p>Lead arrivato. Se non contattato entro 24h → reminder. Se non contattato entro 72h → escalation.</p>\n\n<h3>Approccio</h3>\n<ol>\n  <li>Workflow principale crea un record “pending follow-up” (Sheet/DB)</li>\n  <li>Schedule Trigger ogni ora</li>\n  <li>Sub-workflow “UTIL_reminder_policy” decide cosa fare (nessun alert / reminder / escalation)</li>\n</ol>\n\n<h3>Template centralizzati</h3>\n<p>Metti testo, emoji e formattazione in un sub-workflow “UTIL_message_templates” per riuso e coerenza.</p>\n\n<h3>Esercizio</h3>\n<p>Crea una policy: se <code>hours_since_created &gt; 24</code> e <code>status != contacted</code> → reminder. Se &gt; 72 → escalation. Simula con dati mock.</p>",
+      "tags": [
+        "notifications",
+        "sla"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m3",
+      "moduleTitle": "Sub-workflows (Scalare e riusare)",
+      "id": "m3-05",
+      "title": "Notifiche personalizzate: canale e contenuto in base al contesto",
+      "estMin": 30,
+      "objectives": [
+        "Decidere canale (email/Telegram/WhatsApp) in base a fonte/score",
+        "Personalizzare contenuto per stakeholder diversi",
+        "Ridurre rumore informativo"
+      ],
+      "contentHtml": "<h3>Problema tipico</h3>\n<p>Un team riceve troppe notifiche e smette di leggerle.</p>\n\n<h3>Soluzione</h3>\n<ul>\n  <li>Se <strong>score alto</strong> → notifica immediata su canale “hot leads”.</li>\n  <li>Se <strong>score medio</strong> → batch (digest) ogni 2 ore.</li>\n  <li>Se <strong>score basso</strong> → solo log + nurture automatica.</li>\n</ul>\n\n<h3>Implementazione</h3>\n<p>Sub-workflow “UTIL_notification_router”:</p>\n<ul>\n  <li>Input: lead_standard</li>\n  <li>Output: { channel, message, priority }</li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Costruisci 3 template (hot/medium/low) e fai scegliere al router. Testa con 5 lead mock.</p>",
+      "tags": [
+        "notifications",
+        "personalization"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m4",
+      "moduleTitle": "AI Agents (Automazioni agentiche professionali)",
+      "id": "m4-01",
+      "title": "Nodi AI: panoramica operativa (cosa usare e quando)",
+      "estMin": 22,
+      "objectives": [
+        "Selezionare i nodi AI giusti per il task",
+        "Capire limiti e costi",
+        "Inserire AI in pipeline senza rompere qualità"
+      ],
+      "contentHtml": "<h3>3 categorie di uso AI in n8n</h3>\n<ul>\n  <li><strong>Trasformazione contenuti</strong>: riassunti, classificazione, estrazione.</li>\n  <li><strong>Assistenti</strong>: Q&amp;A e supporto operativo su chat.</li>\n  <li><strong>Agentic automation</strong>: un agente decide quali strumenti usare per raggiungere un obiettivo.</li>\n</ul>\n\n<h3>Regole qualità</h3>\n<ul>\n  <li>Chiedi output strutturato (JSON) e validalo.</li>\n  <li>Se serve accuratezza, integra retrieval (RAG) su fonti interne.</li>\n  <li>Logga prompt/risposte con attenzione a PII e segreti.</li>\n</ul>\n\n<h3>Fonti</h3>\n<ul>\n  <li><a href=\"https://docs.n8n.io/advanced-ai/\" target=\"_blank\" rel=\"noreferrer\">n8n Advanced AI</a></li>\n</ul>",
+      "tags": [
+        "ai",
+        "nodes"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m4",
+      "moduleTitle": "AI Agents (Automazioni agentiche professionali)",
+      "id": "m4-02",
+      "title": "Il nodo AI Agent: come funziona davvero (tools agent)",
+      "estMin": 30,
+      "objectives": [
+        "Capire cosa è un agente in n8n",
+        "Configurare un AI Agent con almeno 1 tool",
+        "Gestire input/output e limiti"
+      ],
+      "contentHtml": "<h3>Concetto</h3>\n<p>Un AI Agent in n8n è un sistema che riceve un obiettivo e usa strumenti collegati per svolgere azioni. n8n richiede che tu colleghi almeno un tool.</p>\n\n<h3>Configurazione minima</h3>\n<ol>\n  <li>AI Agent node</li>\n  <li>Collega un tool (es. HTTP Request come tool) o altri tool disponibili</li>\n  <li>Definisci system instructions: tono, formato output, vincoli</li>\n  <li>Passa input (domanda, contesto, dati)</li>\n</ol>\n\n<h3>Nota sulle versioni</h3>\n<p>La documentazione n8n indica che, nelle versioni più recenti, il nodo AI Agent funziona come “Tools Agent”.</p>\n\n<h3>Fonti</h3>\n<ul>\n  <li><a href=\"https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/\" target=\"_blank\" rel=\"noreferrer\">n8n: AI Agent node</a></li>\n  <li><a href=\"https://docs.n8n.io/advanced-ai/examples/understand-agents/\" target=\"_blank\" rel=\"noreferrer\">n8n: capire gli agenti</a></li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Configura un AI Agent che può usare un tool HTTP per cercare un KPI su un endpoint (anche fittizio). L’output deve essere JSON con campi: kpi_name, value, period, note.</p>",
+      "tags": [
+        "ai-agent",
+        "langchain"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m4",
+      "moduleTitle": "AI Agents (Automazioni agentiche professionali)",
+      "id": "m4-03",
+      "title": "AI Agents Tools: progettare strumenti “safe” e utili",
+      "estMin": 34,
+      "objectives": [
+        "Capire cosa significa “tool” in n8n",
+        "Progettare tool con input/output chiari",
+        "Ridurre rischi (tool abuse, prompt injection)"
+      ],
+      "contentHtml": "<h3>Cos’è un tool</h3>\n<p>Un tool è una capacità che l’agente può invocare (API, database, documenti, ecc.). Se il tool è mal progettato, l’agente può fallire o fare danni.</p>\n\n<h3>Design checklist per tool</h3>\n<ul>\n  <li>Input schema chiaro (campi, tipi, esempi)</li>\n  <li>Output schema chiaro (sempre JSON coerente)</li>\n  <li>Limiti: timeouts, rate limit, scope ristretto</li>\n  <li>Logging: salva invocazioni e status</li>\n</ul>\n\n<h3>Tool suggeriti per marketing</h3>\n<ul>\n  <li>HTTP Request (API Ads/CRM/BI)</li>\n  <li>Google Docs/Sheets tool (brief, report)</li>\n  <li>Database tool (knowledge base, lead log)</li>\n</ul>\n\n<h3>Fonti</h3>\n<ul>\n  <li><a href=\"https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolaiagent/\" target=\"_blank\" rel=\"noreferrer\">n8n: AI Agent Tool node</a></li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Crea 1 tool “GET_CAMPAIGN_SUMMARY” (anche mock) che accetta {campaign_id} e restituisce {spend, conv, roas}. Poi chiedi all’agente di usare quel tool per scrivere una nota “executive-ready”.</p>",
+      "tags": [
+        "tools",
+        "security"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m4",
+      "moduleTitle": "AI Agents (Automazioni agentiche professionali)",
+      "id": "m4-04",
+      "title": "AI Agent Memory: memoria di conversazione e stato (con cautela)",
+      "estMin": 26,
+      "objectives": [
+        "Distinguere memoria conversazionale vs stato applicativo",
+        "Evitare leakage di dati sensibili",
+        "Persistenza: quando serve davvero"
+      ],
+      "contentHtml": "<h3>Che cos’è la “memory”</h3>\n<p>La memoria permette all’agente di mantenere contesto tra messaggi/turni. È utile per chatbot e assistenti, ma va gestita per evitare accumulo di dati sensibili.</p>\n\n<h3>Buone pratiche</h3>\n<ul>\n  <li>Minimizza: salva solo ciò che serve (preferibilmente sintetizzato).</li>\n  <li>Separazione: dati personali (PII) fuori dalla memoria LLM, se possibile.</li>\n  <li>TTL: scadenza o reset dopo N interazioni.</li>\n</ul>\n\n<h3>Pattern marketing</h3>\n<p>Stato “utente”: ultimo report richiesto, canale preferito, KPI preferito. Evita di salvare email/telefono nella memoria del modello.</p>\n\n<h3>Esercizio</h3>\n<p>Costruisci un bot che ricorda solo 2 preferenze: periodo report e canale. Chiedi all’utente “Vuoi il report weekly o monthly?” e salva la scelta (senza salvare dati personali).</p>",
+      "tags": [
+        "memory",
+        "privacy"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m4",
+      "moduleTitle": "AI Agents (Automazioni agentiche professionali)",
+      "id": "m4-05",
+      "title": "Come costruire un RAG: retrieval + generazione (per risposte accurate)",
+      "estMin": 40,
+      "objectives": [
+        "Capire RAG e quando serve",
+        "Creare un mini knowledge base (docs/FAQ)",
+        "Usare embeddings e retrieval in un workflow n8n"
+      ],
+      "contentHtml": "<h3>Perché RAG</h3>\n<p>Se vuoi risposte affidabili su contenuti aziendali (procedure, offerte, policy, KPI interni), devi far “leggere” all’AI una base documentale. Questo riduce allucinazioni e aumenta coerenza.</p>\n\n<h3>Componenti RAG</h3>\n<ol>\n  <li><strong>Ingestion</strong>: carichi documenti e li spezzetti in chunk</li>\n  <li><strong>Embeddings</strong>: trasformi chunk in vettori</li>\n  <li><strong>Vector store</strong>: salvi e cerchi per similarità</li>\n  <li><strong>Retriever</strong>: recupera i chunk più rilevanti</li>\n  <li><strong>Generator</strong>: il modello risponde usando i chunk</li>\n</ol>\n\n<h3>Implementazione minima in n8n (concettuale)</h3>\n<ol>\n  <li>Trigger: aggiornamento documenti (Drive/Repo)</li>\n  <li>Split in chunk</li>\n  <li>Embeddings (es. Gemini embeddings)</li>\n  <li>Salva in DB/Vector store</li>\n  <li>Query: recupero top-k + prompt con citazioni</li>\n</ol>\n\n<h3>Fonti</h3>\n<ul>\n  <li><a href=\"https://docs.n8n.io/advanced-ai/\" target=\"_blank\" rel=\"noreferrer\">n8n Advanced AI</a></li>\n  <li><a href=\"https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsgooglegemini/\" target=\"_blank\" rel=\"noreferrer\">n8n: Embeddings Google Gemini</a></li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Prendi 1 documento interno (anche fittizio) e spezzalo in 5 chunk. Crea embeddings e salva in una struttura semplice (anche JSON). Simula una query e fai rispondere l’AI citando i chunk usati.</p>",
+      "tags": [
+        "rag",
+        "embeddings"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m4",
+      "moduleTitle": "AI Agents (Automazioni agentiche professionali)",
+      "id": "m4-06",
+      "title": "Valutare un AI Agent: metriche, test set, guardrail",
+      "estMin": 32,
+      "objectives": [
+        "Definire criteri di qualità misurabili",
+        "Creare un set di test con casi reali",
+        "Implementare fallback quando l’AI è incerta"
+      ],
+      "contentHtml": "<h3>Valutazione: cosa misurare</h3>\n<ul>\n  <li><strong>Accuratezza</strong>: correttezza rispetto a fonti</li>\n  <li><strong>Conformità formato</strong>: JSON valido, campi presenti</li>\n  <li><strong>Tempo</strong>: latenza media e p95</li>\n  <li><strong>Costo</strong>: token/spesa per task</li>\n  <li><strong>Safety</strong>: niente dati sensibili, niente azioni non autorizzate</li>\n</ul>\n\n<h3>Test set</h3>\n<p>Costruisci 20 richieste reali (FAQ, report, task). Definisci output atteso o rubric (punteggio 1–5).</p>\n\n<h3>Guardrail</h3>\n<ul>\n  <li>Schema validation su output</li>\n  <li>Se confidence bassa: chiedi chiarimento o fallback “human-in-the-loop”</li>\n  <li>Limitare tool: allow-list endpoint</li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Crea 5 test prompt per il tuo bot KPI. Per ciascuno definisci: output atteso e criteri (es. note &lt;= 280 caratteri, includere periodo). Esegui e annota risultati.</p>",
+      "tags": [
+        "evaluation",
+        "quality"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m5",
+      "moduleTitle": "Debugging ed errori (Affidabilità in produzione)",
+      "id": "m5-01",
+      "title": "Debugging e gestione degli errori: strumenti e pattern",
+      "estMin": 28,
+      "objectives": [
+        "Leggere executions e isolare il nodo problematico",
+        "Gestire errori con retry, fallback e Stop & Error",
+        "Evitare “silent failures”"
+      ],
+      "contentHtml": "<h3>Strumenti principali</h3>\n<ul>\n  <li><strong>Executions</strong>: guarda input/output per ogni nodo</li>\n  <li><strong>Pin data</strong>: riproduci scenari senza retrigger</li>\n  <li><strong>Stop And Error</strong>: ferma con errore “voluto” e messaggio</li>\n</ul>\n\n<h3>Pattern affidabilità</h3>\n<ul>\n  <li><strong>Retry</strong> su errori temporanei (5xx, timeout)</li>\n  <li><strong>Fallback</strong>: se API down → metti in coda / invia alert</li>\n  <li><strong>Validation</strong> prima di azioni irreversibili</li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Simula un errore (es. URL sbagliato in HTTP Request). Implementa: (1) retry limitato, (2) Stop &amp; Error con messaggio leggibile, (3) invio alert (anche placeholder).</p>\n\n<h3>Fonti</h3>\n<ul>\n  <li><a href=\"https://docs.n8n.io/flow-logic/error-handling/\" target=\"_blank\" rel=\"noreferrer\">n8n: error handling</a></li>\n</ul>",
+      "tags": [
+        "debug",
+        "reliability"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m5",
+      "moduleTitle": "Debugging ed errori (Affidabilità in produzione)",
+      "id": "m5-02",
+      "title": "Error Workflow: alert automatici quando un workflow fallisce",
+      "estMin": 24,
+      "objectives": [
+        "Creare un Error Workflow con Error Trigger",
+        "Collegarlo ai workflow critici",
+        "Inviare alert strutturati al canale giusto"
+      ],
+      "contentHtml": "<h3>Concetto</h3>\n<p>Un <strong>Error Workflow</strong> si attiva quando un workflow fallisce. La differenza principale è la presenza di un <strong>Error Trigger</strong> nel workflow di errore.</p>\n\n<h3>Setup</h3>\n<ol>\n  <li>Crea un workflow “ERROR_alerts”</li>\n  <li>Aggiungi <strong>Error Trigger</strong></li>\n  <li>Invia notifica (Email/Slack/Telegram) con:\n    <ul>\n      <li>nome workflow</li>\n      <li>node che ha fallito</li>\n      <li>messaggio errore</li>\n      <li>link all’execution (se disponibile)</li>\n    </ul>\n  </li>\n  <li>Nei workflow critici: Settings → Error Workflow → seleziona “ERROR_alerts”</li>\n</ol>\n\n<h3>Fonti</h3>\n<ul>\n  <li><a href=\"https://docs.n8n.io/flow-logic/error-handling/\" target=\"_blank\" rel=\"noreferrer\">n8n: error handling</a></li>\n  <li><a href=\"https://docs.n8n.io/courses/level-two/chapter-4/\" target=\"_blank\" rel=\"noreferrer\">n8n course: error workflows</a></li>\n</ul>\n\n<h3>Esercizio</h3>\n<p>Configura un Error Workflow che invia un messaggio Telegram “🚨 Workflow failed: …”. Poi forza un errore in un workflow di test e verifica l’alert.</p>",
+      "tags": [
+        "error-workflow",
+        "monitoring"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m6",
+      "moduleTitle": "Case studies (progetti portfolio-ready)",
+      "id": "m6-01",
+      "title": "Case Study: Agente OCR (PDF/immagini → testo → estrazione dati)",
+      "estMin": 45,
+      "objectives": [
+        "Scaricare o ricevere un documento",
+        "Estrarre testo (OCR) e dati strutturati",
+        "Validare e salvare output (Sheet/DB)"
+      ],
+      "contentHtml": "<h3>Use case marketing</h3>\n    <p>Automatizzare lettura di fatture, contratti, preventivi o brief in PDF/immagine per estrarre campi chiave (importi, date, contatti).</p>\n\n    <h3>Architettura</h3>\n    <ol>\n      <li>Trigger: email con allegato / upload / webhook</li>\n      <li>Estrazione file (binary)</li>\n      <li>OCR (servizio esterno o tool dedicato)</li>\n      <li>AI: estrazione campi in JSON (es. {company, amount, date})</li>\n      <li>Validazione schema</li>\n      <li>Salva su DB/Sheet + notifica</li>\n    </ol>\n\n    <h3>Output JSON (schema)</h3>\n    <pre><code>{\n  \"doc_type\": \"invoice\",\n  \"company\": \"ACME\",\n  \"amount\": 1234.56,\n  \"currency\": \"EUR\",\n  \"date\": \"2026-01-05\",\n  \"confidence\": 0.82\n}</code></pre>\n\n    <h3>Rischi e mitigazioni</h3>\n    <ul>\n      <li>OCR rumoroso → usa post-processing + fallback “human review”</li>\n      <li>Dati sensibili → evita log in chiaro, applica accessi e retention</li>\n    </ul>\n\n    <h3>Compito</h3>\n    <p>Implementa una pipeline minima con un file di test e produci l’output JSON. Se non hai OCR, simula il testo OCR e fai solo la parte di estrazione+validazione.</p>",
+      "tags": [
+        "case-study",
+        "ocr",
+        "ai"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m6",
+      "moduleTitle": "Case studies (progetti portfolio-ready)",
+      "id": "m6-02",
+      "title": "Case Study: Creazione di un web scraper (contenuti → insight)",
+      "estMin": 46,
+      "objectives": [
+        "Recuperare HTML o feed da un sito",
+        "Estrarre dati (titolo, meta, H1, prezzo, ecc.)",
+        "Riassumere e salvare insight per marketing"
+      ],
+      "contentHtml": "<h3>Use case marketing</h3>\n    <p>Monitorare competitor: nuovi articoli, pagine prodotto, prezzi, headline, e sintetizzare insight settimanali.</p>\n\n    <h3>Architettura</h3>\n    <ol>\n      <li>Schedule Trigger (es. 1 volta/dì)</li>\n      <li>HTTP Request (GET pagina o feed)</li>\n      <li>HTML Extract / parsing (o Code)</li>\n      <li>Deduplica (URL già visto?)</li>\n      <li>AI: riassunto + tag (topic, intent, CTA)</li>\n      <li>Salva in Sheet/DB + invia digest</li>\n    </ol>\n\n    <h3>Output consigliato</h3>\n    <pre><code>{\n  \"url\": \"...\",\n  \"title\": \"...\",\n  \"published_at\": \"...\",\n  \"summary\": \"...\",\n  \"topics\": [\"...\",\"...\"],\n  \"cta\": \"...\"\n}</code></pre>\n\n    <h3>Note legali/etiche</h3>\n    <ul>\n      <li>Rispetta robots.txt e termini del sito.</li>\n      <li>Evita scraping aggressivo: rate limit e caching.</li>\n    </ul>\n\n    <h3>Compito</h3>\n    <p>Implementa uno scraper su una pagina pubblica “safe” o un feed RSS. Produci un digest di 5 righe per Telegram.</p>",
+      "tags": [
+        "case-study",
+        "scraping"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m6",
+      "moduleTitle": "Case studies (progetti portfolio-ready)",
+      "id": "m6-03",
+      "title": "Case Study: Agente DB (query + insight + azione)",
+      "estMin": 50,
+      "objectives": [
+        "Leggere/scrivere su DB (anche SQLite/Postgres)",
+        "Creare una knowledge base operativa",
+        "Rispondere a domande KPI con azioni"
+      ],
+      "contentHtml": "<h3>Use case</h3>\n<p>Hai un DB con lead, campagne e performance. Vuoi un assistente che risponda e avvii azioni: “Mostrami le campagne con ROAS &lt; 1.5 e crea un task di ottimizzazione”.</p>\n\n<h3>Architettura</h3>\n<ol>\n  <li>Trigger: Telegram/Slack o UI</li>\n  <li>AI Agent + tool DB (query)</li>\n  <li>Validation: query allow-list / parametri safe</li>\n  <li>Output: tabella + raccomandazioni + azione (create task)</li>\n</ol>\n\n<h3>Pattern sicurezza</h3>\n<ul>\n  <li>No “SELECT *” su tabelle grandi</li>\n  <li>Limit e filtri obbligatori</li>\n  <li>Log e audit trail</li>\n</ul>\n\n<h3>Compito</h3>\n<p>Simula un DB con 20 righe di performance (anche JSON). Fai generare all’AI un elenco di 5 campagne “da intervenire” con motivazione e priorità.</p>",
+      "tags": [
+        "case-study",
+        "database",
+        "ai-agent"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m6",
+      "moduleTitle": "Case studies (progetti portfolio-ready)",
+      "id": "m6-04",
+      "title": "Case Study: Outfit Assistant (demo di agente multi-tool)",
+      "estMin": 48,
+      "objectives": [
+        "Costruire un agente con strumenti multipli",
+        "Usare memoria per preferenze",
+        "Produrre output strutturato + “user-friendly”"
+      ],
+      "contentHtml": "<h3>Perché è utile (anche se non marketing)</h3>\n    <p>È un case study perfetto per imparare: multi-tool, preferenze utente, output strutturato. Le stesse tecniche si applicano a: “Campaign Assistant”, “Content Assistant”, “SEO Assistant”.</p>\n\n    <h3>Funzioni</h3>\n    <ul>\n      <li>Chiede meteo/occasione (o input utente)</li>\n      <li>Propone outfit con motivazione</li>\n      <li>Memorizza 2 preferenze (stile, colori)</li>\n    </ul>\n\n    <h3>Output JSON</h3>\n    <pre><code>{\n  \"outfit\": [\n    {\"item\":\"giacca\", \"note\":\"...\"},\n    {\"item\":\"pantaloni\", \"note\":\"...\"}\n  ],\n  \"reasoning\": \"...\",\n  \"follow_up_question\": \"...\"\n}</code></pre>\n\n    <h3>Compito</h3>\n    <p>Implementa l’agente su Telegram: l’utente scrive “outfit per cena”. L’agente risponde in JSON + messaggio formattato. (Per il meteo puoi simulare con un tool mock.)</p>",
+      "tags": [
+        "case-study",
+        "agentic"
+      ],
+      "prereq": []
+    },
+    {
+      "moduleId": "m6",
+      "moduleTitle": "Case studies (progetti portfolio-ready)",
+      "id": "m6-05",
+      "title": "Case Study: Assistente personalizzato per Google Calendar (briefing giornaliero)",
+      "estMin": 55,
+      "objectives": [
+        "Leggere eventi calendario e sintetizzare agenda",
+        "Aggiungere azioni (promemoria, brief, task)",
+        "Integrare un modello AI per “daily briefing”"
+      ],
+      "contentHtml": "<h3>Use case</h3>\n<p>Ogni mattina ricevi un briefing: agenda di oggi + suggerimenti (prep meeting, follow-up, blocchi focus). Perfetto per un Digital Marketing Manager.</p>\n\n<h3>Architettura</h3>\n<ol>\n  <li>Schedule Trigger (es. 07:30)</li>\n  <li>Google Calendar node: leggi eventi di oggi</li>\n  <li>Set: crea un contesto (titolo, orari, location, descrizione)</li>\n  <li>AI: genera briefing sintetico + azioni consigliate</li>\n  <li>Invio: email/Telegram/WhatsApp</li>\n</ol>\n\n<h3>Output consigliato</h3>\n<ul>\n  <li>Agenda in elenco</li>\n  <li>3 priorità del giorno</li>\n  <li>2 suggerimenti operativi (es. “prepara KPI meeting X”)</li>\n</ul>\n\n<h3>Compito</h3>\n<p>Se non hai Google Calendar configurato, simula 5 eventi mock. Genera un briefing in 120–180 parole + 3 bullet di “azioni”.</p>",
+      "tags": [
+        "case-study",
+        "calendar",
+        "productivity"
+      ],
+      "prereq": []
+    }
+  ]
+}
